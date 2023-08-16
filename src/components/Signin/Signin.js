@@ -18,7 +18,7 @@ class Signin extends Component {
     }
 
     onSubmitSignIn = () => {
-        fetch('https://face-recognition-brain-api-b3qk.onrender.com/signin', {
+        fetch('https://localhost:3000/signin', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
@@ -29,7 +29,7 @@ class Signin extends Component {
             .then(response => response.json())
             .then(data => {
                 if (data === 'Success!') {
-                    fetch(`https://face-recognition-brain-api-b3qk.onrender.com/profile_email/${this.state.signInEmail}`)
+                    fetch(`https://localhost:3000/profile_email/${this.state.signInEmail}`)
                         .then(response => response.json())
                         .then(user => {
                             console.log(user);

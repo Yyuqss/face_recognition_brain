@@ -24,7 +24,7 @@ class Signin extends Component {
     }
 
     onSubmitRegister = () => {
-        fetch('https://face-recognition-brain-api-b3qk.onrender.com/register', {
+        fetch('https://localhost:3000/register', {
             method: 'post',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({

@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   // componentDidMount() {
-  //   fetch('http://localhost:3000')
+  //   fetch('https://face-recognition-brain-api-ljj9.onrender.com')
   //     .then(response => response.json())
   //     .then(console.log);
   // }
@@ -90,7 +90,7 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
 
-    fetch('http://localhost:3000/apicall', {
+    fetch('https://face-recognition-brain-api-ljj9.onrender.com/apicall', {
       method: 'post',
       headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({
@@ -102,7 +102,7 @@ class App extends Component {
         const box_array = this.calculateFacesLocation(result);
         this.displayFaceBoxes(box_array);
         if (result.length) {
-          fetch("http://localhost:3000/image", {
+          fetch("https://face-recognition-brain-api-ljj9.onrender.com/image", {
             method: 'put',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
